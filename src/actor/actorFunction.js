@@ -1,8 +1,8 @@
-const Movie = require("./movieTable");
+const Actor = require("./actorTable");
 
-exports.addMovie = async (movieObj) => {
+exports.addActor = async (personObj) => {
     try {
-        await Movie.create(movieObj);
+        await Person.create(personObj);
     } catch (error) {
         console.log(error);
     }
