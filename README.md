@@ -1,6 +1,7 @@
 # yargs sequelize mysql
 
 Please complete Assessment [GH9] 'Yargs CLI w/MySQL' prepared by Andy Bolton: Task:
+
 • Build a CLI that allows users to add movies to a
 MySQL DB.
 
