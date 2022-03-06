@@ -2,46 +2,29 @@ const Actor = require("./actorTable");
 
 exports.addActor = async (personObj) => {
     try {
-        await Person.create(personObj);
+        await Actor.create(personObj);
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.listMovies = async (filterObj) => {
+exports.listActors = async () => {
     // console.log("filterObj: ", filterObj);
     try {
-        if (filterObj && (filterObj.title || filterObj.actor)) {
-            return await Movie.findAll({where: filterObj});
-
-        } else {
-            return await Movie.findAll();
-        }
+        
+        return await Actor.findAll();
+        
         
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.updateActor = async (inputObj) => {
-    try {
-        return await Movie.update({ actor: inputObj.newActor }, {
-            where: {
-              actor: inputObj.oldActor
-            }
-          });
-    } catch (error) {
-        console.log(error, "It did not update")
-    }
-}
 
-exports.deleteEntry = async (filterObj) => {
+exports.deleteActor = async (filterObj) => {
     try {
-        return await Movie.destroy({
+        return await Actor.destroy({
             where: filterObj});
-        
-        
-        
     } catch (error) {
         console.log(error, "It did not update")
     }
