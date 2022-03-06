@@ -11,23 +11,36 @@ exports.addMovie = async (movieObj) => {
 exports.listMovies = async (filterObj) => {
     // console.log("filterObj: ", filterObj);
     try {
-        if (filterObj && (filterObj.title || filterObj.actor)) {
+        if (filterObj && filterObj.title) {
             return await Movie.findAll({where: filterObj});
-
         } else {
             return await Movie.findAll();
         }
-        
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.updateActor = async (inputObj) => {
+// exports.listMovies = async (filterObj) => {
+//     // console.log("filterObj: ", filterObj);
+//     try {
+//         if (filterObj && (filterObj.title || filterObj.actor)) {
+//             return await Movie.findAll({where: filterObj});
+
+//         } else {
+//             return await Movie.findAll();
+//         }
+        
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+exports.updateDirector = async (inputObj) => {
     try {
-        return await Movie.update({ actor: inputObj.newActor }, {
+        return await Movie.update({ actor: inputObj.newDirector }, {
             where: {
-              actor: inputObj.oldActor
+              actor: inputObj.oldDirector
             }
           });
     } catch (error) {
