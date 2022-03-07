@@ -1,4 +1,4 @@
-const Movie = require("./models");
+const Movie = require("../elements/models");
 
 exports.addMovie = async (movieObj) => {
     try {
@@ -20,6 +20,7 @@ exports.listMovies = async (filterObj) => {
         console.log(error);
     }
 };
+
 
 // exports.listMovies = async (filterObj) => {
 //     // console.log("filterObj: ", filterObj);
@@ -48,7 +49,7 @@ exports.updateDirector = async (inputObj) => {
     }
 }
 
-exports.deleteEntry = async (filterObj) => {
+exports.deleteMovie = async (filterObj) => {
     try {
         return await Movie.destroy({
             where: filterObj});

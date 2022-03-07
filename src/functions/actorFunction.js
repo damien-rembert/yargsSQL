@@ -1,4 +1,4 @@
-const Actor = require("../movie/models");
+const Actor = require("../elements/models");
 // const { addMovie } = require("../movie/movieFunction");
 
 
